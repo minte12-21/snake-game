@@ -72,18 +72,18 @@ let snakeY = snake[0].y;
     if(d=="down") snakeY -=scale;
     if(d=="up") snakeY +=scale;
    
-// Fix these lines in your code:
-if(snakeX >= canvas.width){  // Fixed: >= instead of >
+
+if(snakeX >= canvas.width){  
     snakeX = 0;
 }
-if(snakeY >= canvas.height){ // Fixed: >= instead of >
+if(snakeY >= canvas.height){ 
     snakeY = 0;
 }
-if(snakeX < 0){              // Fixed: 0 instead of O
-    snakeX = canvas.width - scale;  // Fixed: 380, not 400
+if(snakeX < 0){              
+    snakeX = canvas.width - scale;  
 }
 if(snakeY < 0){
-    snakeY = canvas.height - scale; // Fixed: 380, not 400
+    snakeY = canvas.height - scale; 
 }
   let newHead={
     x: snakeX,
@@ -100,7 +100,7 @@ if(snakeY < 0){
   else {
  snake.pop(); 
   }
-   // Check self-collision AFTER possible tail removal
+  
   for(let i = 0; i < snake.length; i++) {
     if(snake[i].x === newHead.x && snake[i].y === newHead.y) {
       ctx.fillStyle = "red";
